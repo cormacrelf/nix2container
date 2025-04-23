@@ -51,7 +51,7 @@ let
       mkdir -p vendor/github.com/nlewo/nix2container/
       cp -r ${nix2container-bin.src}/* vendor/github.com/nlewo/nix2container/
       # https://github.com/nlewo/nix2container/issues/168
-      chmod -R 755 vendor/github.com/nlewo/nix2container
+      find vendor/github.com/nlewo/nix2container -type d -exec chmod 755 {} \;
       cd vendor/github.com/containers/image/v5
       mkdir nix/
       touch nix/transport.go
